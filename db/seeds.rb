@@ -5,5 +5,5 @@ Project.create name: 'Time tracking app'
 Project.create name: 'Recipes', description: 'Track my favourite recipes'
 
 22.times do |project| 
-	Project.create name: 'Project #{project}', description: 'This is project number #{project}'
+	Project.create name: "Project #{project}", description: "This is project number #{project}"
 end
