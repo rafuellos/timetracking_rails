@@ -1,0 +1,9 @@
+<p>This is the project:</p>
+<p> <b><%= @project.name %></b>
+<p> Project description: 
+	<% if @project.description %> 
+		<em><%= @project.description %></em>
+	<% else %>
+		-----
+	<% end %>
+</p>
