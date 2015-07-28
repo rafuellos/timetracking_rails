@@ -1,10 +1,28 @@
-<ul>
-	<% @projects.each do |project| %>
-		<% if project.description %>
-			<li> <%= project.name %> - <%= project.description %></li>
-		<%else %>
-			<li> <%= project.name %></li>
-		<% end %>
-	<% end%>
+<table>
+	<th>
+		
+		<td><b>Project Name</b></td>
+		<td><b>Project Description</b></td>
+		<td><b>Project details</b></td>
+	</th>
 
-</ul>
+	<% @projects.each do |project| %>
+	<tr>
+		<td></td>
+		<td><%= project.name %></td>
+		<td>
+			<% if project.description %>
+				<%= project.description %>
+			<%else %>
+				-----
+			<% end%>
+		</td>
+		<td style = "text-align: center">
+			<% title = project.id.to_s %>
+			<%= link_to title, details_path(project.id) %>
+
+		</td>
+	<% end %>
+	</tr>
+
+</table>
