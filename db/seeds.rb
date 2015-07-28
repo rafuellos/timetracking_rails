@@ -1,6 +1,6 @@
 
 22.times do |project| 
-	project = Project.create name: "Project #{project}", description: "This is project number #{project}"
+	project = Project.create name: "Project #{project + 1}", description: "This is project number #{project + 1}"
 	project.entries.create(hours: 2, minutes: 45)
 end
 
