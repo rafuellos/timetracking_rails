@@ -1,13 +1,24 @@
 class ProjectsController < ApplicationController
+	
 	def index
 		@projects = Project.last_created_projects(10)
 		if @projects.empty?
 			render template: 'projects/no_projects'
 		end
 	end
+
 	def show
 		unless @project = Project.find_by(id: params[:id])
 			render 'no_projects_found'
 		end
 	end
+
+	def new
+		@project = Project.new	
+	end
+
+	def create
+		
+	end
+
 end

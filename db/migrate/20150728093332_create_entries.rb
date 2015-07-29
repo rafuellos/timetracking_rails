@@ -5,7 +5,7 @@ class CreateEntries < ActiveRecord::Migration
     	#t.integer 	:project_id
     	t.integer 	:hours	
     	t.integer 	:minutes
-    	t.text 		:comments
+    	t.text 		  :comments
     	t.datetime 	:date
       t.timestamps null: false
     end

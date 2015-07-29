@@ -19,7 +19,7 @@
 		</td>
 		<td style = "text-align: center">
 			<% title = project.id.to_s %>
-			<%= link_to title, details_path(project.id) %>
+			<%= link_to title, project_entries_path(project.id) %>
 
 		</td>
 	<% end %>
