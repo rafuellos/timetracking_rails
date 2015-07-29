@@ -1,9 +1,22 @@
+<% if @errors.any? %>
+	<ul>
+		<% @errors.each do |error| %>
+			<li>
+				<%= error %>
+			</li>
+		<% end %>	
+	</ul>
+<% end %>
+
+
+
 <%= form_for @project do |f|%>
 	<%= f.label :name %>
 	<%= f.text_field :name %>	
-	<br>
+	
 	<%= f.label :description %>
 	<%= f.text_field :description %>	
+	<br>
 	<br>
 
 	<%= f.submit "Save project" %>

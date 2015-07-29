@@ -18,7 +18,19 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		
+		@project = Project.new project_params
+		if @project.save
+			redirect_to projects_path
+		else
+		 @errors = @project.errors.full_messages
+		 render 'new'
+		end
+	end
+	
+	private
+	def project_params
+		params.require(:project).permit(:name, :description)
 	end
 
 end
+

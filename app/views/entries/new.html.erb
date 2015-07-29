@@ -1,3 +1,14 @@
+<% if @errors.any? %>
+	<ul>
+		<% @errors.each do |error| %>
+			<li>
+				<%= error %>
+			</li>
+		<% end %>	
+	</ul>
+<% end %>	
+
+
 <%= form_for [@project, @entry] do |f|%>
 	<%= f.label :hours %>
 	<%= f.text_field :hours %>	
@@ -10,7 +21,7 @@
 	<br>
 
 	<%= f.label :date %>
-	<%= f.text_field :date, :placeholder => "dd/mm/yyyy" %>	
+	<%= f.date_field :date %>	
 	<br>
 	<br>
 
