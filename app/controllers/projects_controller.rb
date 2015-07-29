@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new project_params
+		
 		if @project.save
 			redirect_to projects_path
 		else
@@ -27,6 +28,22 @@ class ProjectsController < ApplicationController
 		end
 	end
 	
+	def edit
+		@project = Project.find params[:id]	
+	end
+
+	def update
+		@project = Project.find params[:id]
+
+		if @project.update_attributes project_params
+			redirect_to projects_path
+		else
+		 @errors = @project.errors.full_messages
+		 render 'edit'
+		end
+
+	end
+
 	private
 	def project_params
 		params.require(:project).permit(:name, :description)

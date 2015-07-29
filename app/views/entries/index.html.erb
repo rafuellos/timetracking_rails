@@ -5,12 +5,14 @@
 <ul>
 	<% @entries.each do |entry| %>
 
-		<li> <%= entry.hours %>h <%= entry.minutes %>m  <%= entry.date.strftime("(%a, %d - %m - %Y)")  %>: <b><%= entry.comments %></b></li>
+		<li> 
+			<%= link_to 'Edit', edit_project_entry_path(@project.id, entry.id) %>
+			<%= entry.hours %>h <%= entry.minutes %>m  <%= entry.date.strftime("(%a, %d - %m - %Y)")  %>: <b><%= entry.comments %>
+			</b></li>
 	
 	<% end%>
 
 </ul>
-
 
 <%= link_to 'New Entry', new_project_entry_path(@project.id) %>
 <%= link_to "Projects List", projects_path %>

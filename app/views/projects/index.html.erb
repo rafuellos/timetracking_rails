@@ -4,6 +4,7 @@
 		<td><b>Project Name</b></td>
 		<td><b>Project Description</b></td>
 		<td><b>Project details</b></td>
+		<td><b>Edit</b></td>
 	</th>
 
 	<% @projects.each do |project| %>
@@ -20,6 +21,10 @@
 		<td style = "text-align: center">
 			<% title = project.id.to_s %>
 			<%= link_to title, project_entries_path(project.id) %>
+
+		</td>
+		<td style = "text-align: center">
+			<%= link_to 'Edit', edit_project_path(project.id) %>
 
 		</td>
 	<% end %>

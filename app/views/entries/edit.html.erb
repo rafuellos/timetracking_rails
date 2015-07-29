@@ -1,0 +1,38 @@
+<% if @entry.errors.full_messages.any? %>
+	<ul>
+		<% @entry.errors.full_messages.each do |error| %>
+			<li>
+				<%= error %>
+			</li>
+		<% end %>	
+	</ul>
+<% end %>	
+
+
+<%= form_for [@project, @entry] do |f|%>
+	<%= f.label :hours, size: 4 %>
+	<%= f.text_field :hours %>	
+	<br>
+	<br>
+
+	<%= f.label :minutes %>
+	<%= f.text_field :minutes %>	
+	<br>
+	<br>
+
+	<%= f.label :date %>
+	<%= f.date_field :date %>	
+	<br>
+	<br>
+
+	<%= f.label :comments %>
+	<%= f.text_field :comments %>	
+	<br>
+	<br>
+	<%= f.submit "Edit entry" %>
+
+<% end %>
+<br>
+<br>
+<%= link_to 'Cancel', project_entries_path(@project.id) %>
+<%= link_to "Projects List", projects_path %>
