@@ -13,15 +13,15 @@ project25 = Project.create name: 'Recipes', description: 'Track my favourite rec
 
 
 project23.entries.create hours: 1, minutes: 23,
-						 comments: 'Review and update project #{project.id}', 
+						 comments: 'Review and update project', 
 						 date: Date.current - 1.day
 
 project23.entries.create hours: 2, minutes: 07,
-						 comments: 'Review and update project #{project.id}', 
+						 comments: 'Review and update project', 
 						 date: Date.current
 
 project24.entries.create hours: 0, minutes: 12,
-						 comments: 'Review and update project #{project.id}', 
+						 comments: 'Review and update project', 
 						 date: Date.current - 2.days
 
 #Entry.create(project_id: project23.id)

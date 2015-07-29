@@ -1,6 +1,6 @@
-<% if @errors.any? %>
+<% if @project.errors.full_messages.any? %>
 	<ul>
-		<% @errors.each do |error| %>
+		<% @project.errors.full_messages.each do |error| %>
 			<li>
 				<%= error %>
 			</li>
@@ -22,3 +22,6 @@
 	<%= f.submit "Save project" %>
 
 <% end %>
+
+
+<%= link_to 'Cancel', projects_path %>

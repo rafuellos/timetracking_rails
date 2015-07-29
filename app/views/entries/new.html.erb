@@ -1,6 +1,6 @@
-<% if @errors.any? %>
+<% if @entry.errors.full_messages.any? %>
 	<ul>
-		<% @errors.each do |error| %>
+		<% @entry.errors.full_messages.each do |error| %>
 			<li>
 				<%= error %>
 			</li>
@@ -32,3 +32,7 @@
 	<%= f.submit "Create entry" %>
 
 <% end %>
+<br>
+<br>
+<%= link_to 'Cancel', project_entries_path(@project.id) %>
+<%= link_to "Projects List", projects_path %>
